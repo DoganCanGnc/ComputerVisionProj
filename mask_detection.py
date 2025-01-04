@@ -17,7 +17,7 @@ from sklearn.metrics import precision_score, recall_score, f1_score, confusion_m
 import seaborn as sns
 
 PATH = './mask_trained.pth'
-TEST_PATH = '../test_images/test0.jpeg'
+TEST_PATH = './test_images/test0.jpeg'
 METRICS = False
 SAVING = True
 ONLY_TESTING = True
@@ -134,15 +134,15 @@ class SSD(nn.Module):
 class MaskedDataset(torch.utils.data.Dataset):
     def __init__(self, transforms=None):
         self.transforms = transforms
-        self.imgs = list(sorted(os.listdir("../Images/")))  
-        self.labels = list(sorted(os.listdir("../Annotations/")))  
+        self.imgs = list(sorted(os.listdir("./Images/")))  
+        self.labels = list(sorted(os.listdir("./Annotations/")))  
 
     def __getitem__(self, idx):
         img_name = self.imgs[idx]
         label_name = self.labels[idx]
 
-        img_path = os.path.join("../Images/", img_name)
-        label_path = os.path.join("../Annotations/", label_name)
+        img_path = os.path.join("./Images/", img_name)
+        label_path = os.path.join("./Annotations/", label_name)
         
         img = Image.open(img_path).convert("RGB")
 
