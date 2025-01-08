@@ -10,7 +10,7 @@ model_path="C:\\Users\\Ahmet\\Desktop\\Python\\cv project YOLOV11\\runs\\detect\
 model = YOLO(model_path)
 
 # Evaluate the model on your validation dataset
-results = model.val(data="dataset_val.yaml",workers=0)
+results = model.val(data="model_eval.yaml",workers=0)
 print(results)
 
 # Extract precision, recall, and mAP from the results
