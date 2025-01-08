@@ -1,0 +1,15 @@
+path: C:\Users\Ahmet\Desktop\Python\cv project YOLOV11
+train: train\images
+val: val\images
+test: test\images
+nc: 3
+names:
+- with_mask
+- mask_weared_incorrect
+- without_mask
+
+augment:
+  - RandomBrightnessContrast:
+      brightness_limit: 0.4  # Adjust brightness by up to 20%
+      contrast_limit: 0.4     # Adjust contrast by up to 40%
+      p: 0.3                 # Probability of applying this augmentation
